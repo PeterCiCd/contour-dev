@@ -2,7 +2,7 @@ version: "3.9"
 services:
 
   service-a:
-    image: 192.168.0.145:5000/repository/demo/service-a:dev
+    image: $CONTUR_TOOLS_IP:5000/repository/demo/service-a:dev
     container_name: serviceA
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
       - contour-dev-net
 
   service-b:
-    image: 192.168.0.145:5000/repository/demo/service-b:dev
+    image: $CONTUR_TOOLS_IP:5000/repository/demo/service-b:dev
     container_name: serviceB
     restart: always
     ports:
