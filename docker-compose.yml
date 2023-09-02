@@ -17,7 +17,7 @@ services:
     container_name: countersenior
     restart: always
     ports:
-      - '8904:8999'
+      - '8904:8080'
     networks:
       - contour-dev-net
     environment:
