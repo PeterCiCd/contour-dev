@@ -1,23 +1,16 @@
 version: "3.9"
+
 services:
-
-  service-a:
-    image: $NEXUS_DOCKER_IP_PORT/repository/demo/service-a:dev
-    container_name: serviceA
+  service-senior:
+    image: $NEXUS_DOCKER_IP_PORT/repository/demo/service-a:senior
+    container_name: servicesenior
     restart: always
     ports:
-      - '8901:8999'
+      - '8903:8999'
     networks:
       - contour-dev-net
-
-  service-b:
-    image: $NEXUS_DOCKER_IP_PORT/repository/demo/service-b:dev
-    container_name: serviceB
-    restart: always
-    ports:
-      - '8902:8999'
-    networks:
-      - contour-dev-net
+    environment:
+      - MSG=$MSG
 
 networks:
   contour-dev-net:
