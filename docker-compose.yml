@@ -12,6 +12,17 @@ services:
     environment:
       - MSG=$MSG
 
+  counter-senior:
+    image: $NEXUS_DOCKER_IP_PORT/repository/demo/counter:senior
+    container_name: countersenior
+    restart: always
+    ports:
+      - '8904:8999'
+    networks:
+      - contour-dev-net
+    environment:
+      - URL_POSTGRESQL=$URL_POSTGRESQL      
+
 networks:
   contour-dev-net:
     driver: bridge
